@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_flashmonk/auth%20and%20security%20/components/login_body.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         title: const Text("Login Page"),
       ),
-      body: Container(),
+      body: const LoginBody(),
     );
   }
 }
