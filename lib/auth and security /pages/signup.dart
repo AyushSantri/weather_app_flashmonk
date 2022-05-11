@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/signup_body.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -10,7 +12,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SignUpBody(),
     );
   }
