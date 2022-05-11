@@ -34,8 +34,7 @@ class MyApp extends StatelessWidget {
               'Welcome to Weather App',
               style: TextStyle(fontSize: 18),
             ),
-            image: Image.network(
-                "https://imgs.search.brave.com/Ky5JFqywmwanEBTNhg0SsOn6Kutz7hIICSmzNLdxVj0/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuZHJpYmJibGUu/Y29tL3VzZXJzLzQz/MTEyMDIvc2NyZWVu/c2hvdHMvMTA3MTMx/NTAvbWVkaWEvODMw/NGIyNjRhOWJlMjMx/NjZmYjUwZjk0YTE0/Nzc3YzAuanBn"),
+            image: Image.network("https://www.pikpng.com/pngl/m/530-5306760_8-ios-7-weather-icon-images-app-iphone.png"),
             backgroundColor: Colors.white,
             loadingText: const Text(
               "By Ayush Santri",
