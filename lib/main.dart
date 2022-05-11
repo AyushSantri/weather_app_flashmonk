@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
               'Welcome to Weather App',
               style: TextStyle(fontSize: 18),
             ),
-            image: Image.network("https://www.pikpng.com/pngl/m/530-5306760_8-ios-7-weather-icon-images-app-iphone.png"),
+            image: Image.asset("assets/splashWeather.png"),
             backgroundColor: Colors.white,
             loadingText: const Text(
               "By Ayush Santri",
