@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.white,
             loadingText: const Text(
               "By Ayush Santri",
-              style: TextStyle(fontSize: 10),
+              style: TextStyle(fontSize: 15),
             ),
             photoSize: 100.0,
             loaderColor: Colors.black),
