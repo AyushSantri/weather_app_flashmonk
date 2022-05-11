@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             seconds: 3,
             navigateAfterSeconds: const Login(),
             title: const Text(
-              'Welcome to Weather App\'22',
+              'Welcome to Weather App',
               style: TextStyle(fontSize: 18),
             ),
             image: Image.network(
@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
               "By Ayush Santri",
               style: TextStyle(fontSize: 10),
             ),
-            styleTextUnderTheLoader: const TextStyle(),
             photoSize: 100.0,
             loaderColor: Colors.black),
       ),
