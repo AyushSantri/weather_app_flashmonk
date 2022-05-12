@@ -16,6 +16,9 @@ class _LoginBodyState extends State<LoginBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(
+        child: Column(
+      children: [],
+    ));
   }
 }
