@@ -40,6 +40,14 @@ class _LoginBodyState extends State<LoginBody> {
             onSaved: (value) {
               _email = value.toString().trim();
             },
+            validator: (value) {
+              if(value?.isEmpty == true) {
+                return "Please enter email";
+              } else if(value?.contains('@') == false) {
+                return "Enter a valid E-mail";
+              }
+              return null;
+            },
           ),
         )
       ],
