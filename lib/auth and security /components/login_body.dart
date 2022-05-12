@@ -23,7 +23,25 @@ class _LoginBodyState extends State<LoginBody> {
       key: _formKey,
         child: Column(
       children: [
-        SizedBox()
+        SizedBox(
+          width: width / 1.3,
+          child: TextFormField(
+            keyboardType: TextInputType.emailAddress,
+            key: const ValueKey('email'),
+            style: const TextStyle(color: Colors.grey),
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(vertical: 17),
+              hintText: "Email address",
+              prefixIcon: const Icon(Icons.email),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            onSaved: (value) {
+              _email = value.toString().trim();
+            },
+          ),
+        )
       ],
     ));
   }
