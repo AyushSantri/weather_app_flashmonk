@@ -12,7 +12,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SingleChildScrollView(child: LoginBody()),
+      body: LoginBody(),
     );
   }
 }
