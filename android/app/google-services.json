@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1015734805316",
-    "project_id": "fms-ditu",
-    "storage_bucket": "fms-ditu.appspot.com"
+    "project_number": "891839647567",
+    "project_id": "weather-app-flashmonk",
+    "storage_bucket": "weather-app-flashmonk.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1015734805316:android:01d62532cd678321696d11",
+        "mobilesdk_app_id": "1:891839647567:android:b739d25a14228f9eb87f3a",
         "android_client_info": {
-          "package_name": "com.fms_ditu.fms_ditu"
+          "package_name": "com.example.weather_app_flashmonk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1015734805316-g7rcl6jkhuf5mef9jd38l2qaa0jgi8as.apps.googleusercontent.com",
+          "client_id": "891839647567-vsk9umnup9kre820t4jc8qg8pejffjjl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDE92byOBuSBWnUFuh7wMS9GmQL5RYS-v4"
+          "current_key": "AIzaSyBns7TXHtvScAHcwFW0oiXClRTYS0ArLLs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1015734805316-g7rcl6jkhuf5mef9jd38l2qaa0jgi8as.apps.googleusercontent.com",
+              "client_id": "891839647567-vsk9umnup9kre820t4jc8qg8pejffjjl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
