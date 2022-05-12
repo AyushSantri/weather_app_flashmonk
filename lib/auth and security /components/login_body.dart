@@ -19,7 +19,9 @@ class _LoginBodyState extends State<LoginBody> {
     return Form(
       key: _formKey,
         child: Column(
-      children: [],
+      children: [
+        SizedBox()
+      ],
     ));
   }
 }
