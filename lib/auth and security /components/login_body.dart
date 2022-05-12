@@ -53,13 +53,13 @@ class _LoginBodyState extends State<LoginBody> {
         SizedBox(
           width: width / 1.3,
           child: TextFormField(
-            keyboardType: TextInputType.emailAddress,
+            keyboardType: TextInputType.visiblePassword,
             key: const ValueKey('password'),
+            obscureText: true,
             style: const TextStyle(color: Colors.grey),
             decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(vertical: 17),
+              contentPadding: const EdgeInsets.symmetric(vertical: 17, horizontal: 20),
               hintText: "password",
-              prefixIcon: const Icon(Icons.email),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
               ),
