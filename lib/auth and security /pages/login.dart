@@ -11,8 +11,10 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: LoginBody(),
+    return const SingleChildScrollView(
+      child: Scaffold(
+        body: LoginBody(),
+      ),
     );
   }
 }
