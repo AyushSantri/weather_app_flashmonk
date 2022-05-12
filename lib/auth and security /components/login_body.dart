@@ -67,6 +67,12 @@ class _LoginBodyState extends State<LoginBody> {
             onSaved: (value) {
               _password = value!;
             },
+            validator: (value) {
+              if(value!.length < 6) {
+                return "min length 6";
+              }
+              return null;
+            },
           ),
         ),
       ],
