@@ -49,7 +49,26 @@ class _LoginBodyState extends State<LoginBody> {
               return null;
             },
           ),
-        )
+        ),
+        SizedBox(
+          width: width / 1.3,
+          child: TextFormField(
+            keyboardType: TextInputType.emailAddress,
+            key: const ValueKey('password'),
+            style: const TextStyle(color: Colors.grey),
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.symmetric(vertical: 17),
+              hintText: "password",
+              prefixIcon: const Icon(Icons.email),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(25),
+              ),
+            ),
+            onSaved: (value) {
+              _password = value!;
+            },
+          ),
+        ),
       ],
     ));
   }
