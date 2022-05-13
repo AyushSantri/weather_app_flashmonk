@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/signup.dart';
@@ -21,8 +22,20 @@ class _LoginBodyState extends State<LoginBody> {
 
     if (validateForm) {
       _formKey.currentState!.save();
+      startAuthentication();
     }
   }
+
+  startAuthentication() async {
+    final user = FirebaseAuth.instance;
+    try {
+      await user.signInWithEmailAndPassword(email: _email, password: _password);
+    } catch (err) {
+      print(err);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(err.toString())));
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
