@@ -9,6 +9,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int temperature = 0;
+  String location = "Dehradun";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("$temperature C", style: const TextStyle(color: Colors.white, fontSize: 60),)
+                Text("$temperature C", style: const TextStyle(color: Colors.white, fontSize: 60),),
+                Text(location, style: const TextStyle(color: Colors.white, fontSize: 40),),
               ],
             ),
           ),
