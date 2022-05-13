@@ -28,7 +28,7 @@ class _LoginBodyState extends State<LoginBody> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 30, top: 50),
+                  margin: const EdgeInsets.only(left: 30, top: 50, bottom: 100),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: RichText(
@@ -76,7 +76,7 @@ class _LoginBodyState extends State<LoginBody> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 SizedBox(
                   width: width / 1.3,
