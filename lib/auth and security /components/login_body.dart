@@ -104,6 +104,39 @@ class _LoginBodyState extends State<LoginBody> {
                     },
                   ),
                 ),
+                Container(
+                  margin: const EdgeInsets.only(top: 80),
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.grey[600],
+                  ),
+                  child: TextButton(
+                    style: ButtonStyle(
+                      overlayColor : MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "Login",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_outlined,
+                          color: Colors.white,
+                          size: 29,
+                        ),
+                      ],
+                    )
+                  ),
+                ),
               ],
             )),
       ),
