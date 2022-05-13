@@ -51,7 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("$temperature C", style: const TextStyle(color: Colors.white, fontSize: 60),),
+                temperature.isEmpty ? const CircularProgressIndicator(color: Colors.white,) :Text("$temperature C", style: const TextStyle(color: Colors.white, fontSize: 60),),
+                const SizedBox(
+                  height: 25,
+                ),
                 Text(location, style: const TextStyle(color: Colors.white, fontSize: 40),),
                 Container(
                   margin: const EdgeInsets.only(top: 90),
