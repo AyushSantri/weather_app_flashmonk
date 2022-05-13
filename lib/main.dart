@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:weather_app_flashmonk/auth%20and%20security%20/pages/login.dart';
+import 'package:weather_app_flashmonk/auth%20and%20security%20/pages/signup.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +27,19 @@ class MyApp extends StatelessWidget {
       home: SafeArea(
         child: SplashScreen(
             seconds: 3,
-            navigateAfterSeconds: const Login(),
+            navigateAfterSeconds: StreamBuilder(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                if (snapshot.hasData) {
+                  return SignUp();
+                } else if (snapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else {
+                  return const Login();
+                }
+              },
+            ),
             title: const Text(
               'Welcome to Weather App',
               style: TextStyle(fontSize: 18),
