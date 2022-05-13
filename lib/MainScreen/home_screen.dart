@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,8 +11,31 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int temperature = 0;
+  var temperature = "";
   String location = "Dehradun";
+
+  @override
+  void initState() {
+    fetchData(location);
+    super.initState();
+  }
+
+  fetchData(String input) async {
+    String _api = "https://api.openweathermap.org/data/2.5/weather?q=$input&appid=17e6da7f2f9753dce8e85aa9a9973183";
+
+    var searchResult = await http.get(Uri.parse(_api));
+    var result = json.decode(searchResult.body);
+
+    setState(() {
+      temperature = (result["main"]["temp"] - 273.15).toString().substring(0, 5);
+    });
+
+    print(searchResult);
+    print(result);
+    print(result["weather"][0]["description"]);
+    print(result["main"]["temp"]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
