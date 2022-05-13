@@ -16,6 +16,14 @@ class _LoginBodyState extends State<LoginBody> {
 
   final _formKey = GlobalKey<FormState>();
 
+  validate() {
+    var validateForm = _formKey.currentState!.validate();
+
+    if (validateForm) {
+      _formKey.currentState!.save();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -119,7 +127,9 @@ class _LoginBodyState extends State<LoginBody> {
                       overlayColor:
                           MaterialStateProperty.all(Colors.transparent),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      validate();
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
