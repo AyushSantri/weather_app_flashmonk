@@ -28,8 +28,26 @@ class _LoginBodyState extends State<LoginBody> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 20, bottom: 30),
-                    child: Image.asset("assets/splashWeather.png")),
+                  margin: const EdgeInsets.only(left: 30, top: 50),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: RichText(
+                        text: const TextSpan(
+                          text: "Welcome to",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                            color: Colors.black,
+                          ),
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: '\nWeather App!',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 50)),
+                          ],
+                        )),
+                  ),
+                ),
                 SizedBox(
                   width: width / 1.3,
                   child: TextFormField(
