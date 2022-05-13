@@ -17,7 +17,11 @@ class _SignUpBodyState extends State<SignUpBody> {
   late String _email;
 
   validate() {
-    var validateForm = _formKey.currentState?.validate();
+    var validateForm = _formKey.currentState!.validate();
+
+    if (validateForm) {
+      _formKey.currentState!.save();
+    }
   }
 
   @override
@@ -144,7 +148,9 @@ class _SignUpBodyState extends State<SignUpBody> {
                   color: Colors.grey[600],
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    validate();
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
