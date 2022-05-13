@@ -16,6 +16,10 @@ class _SignUpBodyState extends State<SignUpBody> {
 
   late String _email;
 
+  validate() {
+    var validateForm = _formKey.currentState?.validate();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
