@@ -22,11 +22,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text("$temperature C", style: const TextStyle(color: Colors.white, fontSize: 60),),
                 Text(location, style: const TextStyle(color: Colors.white, fontSize: 40),),
+                TextField(
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  decoration: InputDecoration(
+                    hintText: "Search another location",
+                    hintStyle: TextStyle(color: Colors.white, fontSize: 18),
+                    prefixIcon: Icon(Icons.search, color: Colors.white,)
+                  ),
+                )
               ],
             ),
           ),
