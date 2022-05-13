@@ -36,6 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
     print(result["main"]["temp"]);
   }
 
+  final TextEditingController _textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,9 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   margin: const EdgeInsets.only(top: 90),
                   width: MediaQuery.of(context).size.width / 1.4,
-                  child: const TextField(
-                    style: TextStyle(color: Colors.white, fontSize: 25),
-                    decoration: InputDecoration(
+                  child: TextField(
+                    controller: _textEditingController,
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
+                    decoration: const InputDecoration(
                       hintText: "Search another location",
                       hintStyle: TextStyle(color: Colors.white, fontSize: 18),
                       prefixIcon: Icon(Icons.search, color: Colors.white,)
