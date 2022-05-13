@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/signup.dart';
+
 class LoginBody extends StatefulWidget {
   const LoginBody({Key? key}) : super(key: key);
 
@@ -33,19 +35,19 @@ class _LoginBodyState extends State<LoginBody> {
                     alignment: Alignment.topLeft,
                     child: RichText(
                         text: const TextSpan(
-                          text: "Welcome to",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Colors.black,
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: '\nWeather App!',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 50)),
-                          ],
-                        )),
+                      text: "Welcome to",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Colors.black,
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: '\nWeather App!',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 50)),
+                      ],
+                    )),
                   ),
                 ),
                 SizedBox(
@@ -114,10 +116,10 @@ class _LoginBodyState extends State<LoginBody> {
                   ),
                   child: TextButton(
                     style: ButtonStyle(
-                      overlayColor : MaterialStateProperty.all(Colors.transparent),
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent),
                     ),
-                    onPressed: () {
-                    },
+                    onPressed: () {},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
@@ -134,7 +136,27 @@ class _LoginBodyState extends State<LoginBody> {
                           size: 29,
                         ),
                       ],
-                    )
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 5.6,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Don't have an account?"),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                (context),
+                                MaterialPageRoute(
+                                    builder: (context) => const SignUp()));
+                          },
+                          child: const Text("Sign up"))
+                    ],
                   ),
                 ),
               ],
