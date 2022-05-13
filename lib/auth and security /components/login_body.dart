@@ -57,6 +57,9 @@ class _LoginBodyState extends State<LoginBody> {
                     },
                   ),
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
                 SizedBox(
                   width: width / 1.3,
                   child: TextFormField(
