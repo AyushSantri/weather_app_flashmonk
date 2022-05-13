@@ -27,12 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text("$temperature C", style: const TextStyle(color: Colors.white, fontSize: 60),),
                 Text(location, style: const TextStyle(color: Colors.white, fontSize: 40),),
-                TextField(
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                  decoration: InputDecoration(
-                    hintText: "Search another location",
-                    hintStyle: TextStyle(color: Colors.white, fontSize: 18),
-                    prefixIcon: Icon(Icons.search, color: Colors.white,)
+                Container(
+                  margin: const EdgeInsets.only(top: 90),
+                  width: MediaQuery.of(context).size.width / 1.4,
+                  child: const TextField(
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    decoration: InputDecoration(
+                      hintText: "Search another location",
+                      hintStyle: TextStyle(color: Colors.white, fontSize: 18),
+                      prefixIcon: Icon(Icons.search, color: Colors.white,)
+                    ),
                   ),
                 )
               ],
