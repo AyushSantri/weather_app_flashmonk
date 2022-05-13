@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_flashmonk/auth%20and%20security%20/pages/login.dart';
 
 class SignUpBody extends StatefulWidget {
   const SignUpBody({Key? key}) : super(key: key);
@@ -181,7 +182,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                     const Text("Already have an account?"),
                     TextButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
                         },
                         child: const Text("Log In"))
                   ],
