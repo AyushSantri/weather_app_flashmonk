@@ -30,11 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
       temperature = (result["main"]["temp"] - 273.15).toString().substring(0, 5);
       location = input;
     });
-
-    print(searchResult);
-    print(result);
-    print(result["weather"][0]["description"]);
-    print(result["main"]["temp"]);
   }
 
   final TextEditingController _textEditingController = TextEditingController();
