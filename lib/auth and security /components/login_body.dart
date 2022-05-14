@@ -51,7 +51,7 @@ class _LoginBodyState extends State<LoginBody> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 30, top: 50, bottom: 100),
+                  margin: const EdgeInsets.only(left: 30, top: 60, bottom: 100),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: RichText(
