@@ -45,6 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
       temperature =
           (result["main"]["temp"] - 273.15).toString().substring(0, 5);
       location = input;
+      icons = result["weather"][0]["icon"];
+
+      identifyWeather(icons);
     });
   }
 
@@ -58,6 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
       temperature = (fetchedResult["main"]["temp"] - 273.15).toString().substring(0, 5);
       location = fetchedResult["name"];
       icons = fetchedResult["weather"][0]["icon"];
+
+      identifyWeather(icons);
     });
   }
 
