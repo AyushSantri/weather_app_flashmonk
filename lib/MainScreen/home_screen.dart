@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
@@ -120,6 +121,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: IconButton(icon: const Icon(Icons.logout, size: 35,), onPressed: (){
+        FirebaseAuth.instance.signOut();
+      },),
       body: images.isNotEmpty ? Stack(
         children: [
           SizedBox(
