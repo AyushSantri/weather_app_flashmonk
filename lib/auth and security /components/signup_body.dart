@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app_flashmonk/MainScreen/home_screen.dart';
 import 'package:weather_app_flashmonk/auth%20and%20security%20/pages/login.dart';
 
 class SignUpBody extends StatefulWidget {
@@ -33,26 +34,23 @@ class _SignUpBodyState extends State<SignUpBody> {
 
     try {
       await auth
-          .createUserWithEmailAndPassword(email: _email, password: _password)
-          .then((value) async {
-        User? user = auth.currentUser;
+          .createUserWithEmailAndPassword(email: _email, password: _password);
+      User? user = auth.currentUser;
 
-        user = auth.currentUser;
-        await user!.reload();
+      user = auth.currentUser;
+      String? uid = user?.uid;
 
-        if (user.emailVerified) {
-          String uid = user.uid;
-
-          await FirebaseFirestore.instance.collection("users").doc(uid).set({
-            "username": _username,
-            "email": _email,
-          });
-        }
+      await FirebaseFirestore.instance.collection("users").doc(uid).set({
+        "username": _username,
+        "email": _email,
       });
+      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const HomeScreen()), (route) => false);
     } catch (err) {
       print(err);
-      if(err.toString() == "[firebase_auth/email-already-in-use] The email address is already in use by another account.") {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Email address already registered")));
+      if (err.toString() ==
+          "[firebase_auth/email-already-in-use] The email address is already in use by another account.") {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Email address already registered")));
       }
     }
   }
@@ -214,7 +212,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                     const Text("Already have an account?"),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Login()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Login()));
                         },
                         child: const Text("Log In"))
                   ],

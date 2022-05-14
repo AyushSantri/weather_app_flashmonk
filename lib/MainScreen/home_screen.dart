@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String images = "";
 
   // but before that you need to add this permission!
-  Future getCurrentLocation() async {
+  void getCurrentLocation() async {
     LocationPermission permission;
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         return Future.error('Location Not Available');
       }
     } else {
-      throw Exception('Error');
+      permission = await Geolocator.requestPermission();
     }
     var position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
