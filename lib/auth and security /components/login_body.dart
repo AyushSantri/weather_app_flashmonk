@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_app_flashmonk/MainScreen/home_screen.dart';
 
 import '../pages/signup.dart';
 
@@ -30,6 +31,7 @@ class _LoginBodyState extends State<LoginBody> {
     final user = FirebaseAuth.instance;
     try {
       await user.signInWithEmailAndPassword(email: _email, password: _password);
+      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const HomeScreen()), (route) => false);
     } catch (err) {
       print(err);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(err.toString())));
