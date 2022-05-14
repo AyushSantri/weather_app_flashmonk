@@ -19,7 +19,17 @@ class _HomeScreenState extends State<HomeScreen> {
   String images = "";
 
   // but before that you need to add this permission!
-  void getCurrentLocation() async {
+  Future getCurrentLocation() async {
+    LocationPermission permission;
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.deniedForever) {
+        return Future.error('Location Not Available');
+      }
+    } else {
+      throw Exception('Error');
+    }
     var position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
     var lat = position.latitude;
@@ -141,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Colors.white,
                       )
                     : Text(
-                        "$temperature C",
+                        "$temperature °C",
                         style:
                             const TextStyle(color: Colors.white, fontSize: 60),
                       ),
