@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       temperature = (result["main"]["temp"] - 273.15).toString().substring(0, 5);
+      location = input;
     });
 
     print(searchResult);
@@ -63,6 +64,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: MediaQuery.of(context).size.width / 1.4,
                   child: TextField(
                     controller: _textEditingController,
+                    onSubmitted: (_location){
+                      setState(() {
+                        fetchData(_textEditingController.text.toString());
+                      });
+                    },
                     style: const TextStyle(color: Colors.white, fontSize: 25),
                     decoration: const InputDecoration(
                       hintText: "Search another location",
