@@ -60,9 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: TextField(
                     controller: _textEditingController,
                     onSubmitted: (_location){
-                      setState(() {
+                      if(_textEditingController.text.toString().isNotEmpty) {
+                        setState(() {
                         fetchData(_textEditingController.text.toString());
                       });
+                      }
                     },
                     style: const TextStyle(color: Colors.white, fontSize: 25),
                     decoration: const InputDecoration(
