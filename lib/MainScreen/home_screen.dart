@@ -14,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var temperature = "";
   String location = "Dehradun";
+  String icons = "";
+  String images = "";
 
   // but before that you need to add this permission!
   void getCurrentLocation() async {
@@ -55,6 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       temperature = (fetchedResult["main"]["temp"] - 273.15).toString().substring(0, 5);
       location = fetchedResult["name"];
+      icons = fetchedResult["weather"][0]["icon"];
+
+      switch(icons) {
+        case "01d" : {
+          images = "assets/hail.png";
+        }
+      }
     });
   }
 
@@ -63,12 +72,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: images.isNotEmpty ? Stack(
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            child: Image.asset("assets/clear.png", fit: BoxFit.fill),
+            child: Image.asset(images, fit: BoxFit.fill),
           ),
           Center(
             child: Column(
@@ -112,12 +121,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.white,
                         )),
                   ),
-                )
+                ),
               ],
             ),
           ),
         ],
-      ),
+      ) : Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text("Fetching your location", style: TextStyle(color: Colors.black, fontSize: 25),),
+          const SizedBox(
+            height: 25,
+          ),
+          CircularProgressIndicator(color: Colors.grey[600],),
+        ],
+      )),
     );
   }
 }
