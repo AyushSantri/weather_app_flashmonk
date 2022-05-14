@@ -58,13 +58,56 @@ class _HomeScreenState extends State<HomeScreen> {
       temperature = (fetchedResult["main"]["temp"] - 273.15).toString().substring(0, 5);
       location = fetchedResult["name"];
       icons = fetchedResult["weather"][0]["icon"];
-
-      switch(icons) {
-        case "01d" : {
-          images = "assets/hail.png";
-        }
-      }
     });
+  }
+
+  identifyWeather(String weatherId) {
+    switch(weatherId) {
+      case "01d" : {
+        images = "assets/clear.png";
+      }
+      break;
+
+      case "02d" : {
+        images = "assets/lightcloud.png";
+      }
+      break;
+
+      case "03d" : {
+        images = "assets/lightcloud.png";
+      }
+      break;
+
+      case "04d" : {
+        images = "assets/heavycloud.png";
+      }
+      break;
+
+      case "09d" : {
+        images = "assets/showers.png";
+      }
+      break;
+
+      case "10d" : {
+        images = "assets/heavyrain.png";
+      }
+      break;
+
+      case "11d" : {
+        images = "assets/thunderstorm.png";
+      }
+      break;
+
+      case "13d" : {
+        images = "assets/snow.png";
+      }
+      break;
+
+      case "50d" : {
+        images = "assets/sleet.png";
+      }
+      break;
+    }
   }
 
   final TextEditingController _textEditingController = TextEditingController();
